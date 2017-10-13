@@ -1,2 +1,2 @@
 # php-demo
-php中学习过的demo包
+学习 PHP 过程中的 demo 包
