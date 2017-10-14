@@ -16,9 +16,9 @@ class Recorder{
 
         // 配置
         $this->inc = new stdClass;
-        $this->inc->appid = '101434352';
-        $this->inc->appkey = '09b8b372150171fbede71d782d46199a';
-        $this->inc->callback = 'http://test.nbycc.com/callback.php';
+        $this->inc->appid = 'xxxxxxxxxxxxxxx';
+        $this->inc->appkey = 'xxxxxxxxxxxxxxxxxxxxxx';
+        $this->inc->callback = 'http://example.com/callback.php';
         $this->inc->scope = 'add_t,add_pic_t,del_t';
         $this->inc->errorReport = true;
         $this->inc->storageType = 'file';
