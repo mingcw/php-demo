@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>QR Code</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.qrcode.js"></script>
+	<script type="text/javascript" src="./js/qrcode.js"></script>
+</head>
+
+<body>
+	<p>快速渲染：</p>
+	<div id="qrcode"></div>
+	<p>table渲染：</p>
+	<div id="qrcodeTable"></div>
+	<p>canvas渲染：</p>
+	<div id="qrcodeCanvas"></div>
+	<p>设置宽高：</p>
+	<div id="qrcodeResize"></div>
+
+	<!-- -------------------------------------------------------- -->
+	<script>
+		// 快速渲染
+		$('#qrcode').qrcode("http://github.com");
+		// table渲染
+		$('#qrcodeTable').qrcode({
+			render	: "table",
+			text	: "http://github.com"
+		});	
+		// canvas渲染
+		$('#qrcodeCanvas').qrcode({
+			render  : "canvas",
+			text	: "http://github.com"
+		});
+		// 设置宽高
+		$('#qrcodeResize').qrcode({
+			width   : 128,
+			height  : 128,
+			text	: "http://github.com"
+		});
+	</script>
+</body>
+</html>
