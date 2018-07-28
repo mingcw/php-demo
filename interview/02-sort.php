@@ -94,8 +94,37 @@ function select_sort($array)
     return $array;
 }
 
+/**
+ * 插入排序
+ * 
+ * 算法:
+ * 1. 从第一个元素开始，该元素可以认为已经被排序
+ * 2. 取出下一个元素，在已经排序的元素序列中从后向前扫描
+ * 3. 如果该元素（已排序）大于新元素，将该元素移到下一位置
+ * 4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+ * 5. 将新元素插入到该位置后
+ * 6. 重复步骤2~5
+ */
+function insert_sort($array)
+{
+    $count = count($array);
+    for ($i = 1; $i < $count; $i++) {      // 从第一个元素开始，该元素可以认为已经被排序
+        $new = $array[$i];
+        for ($j = $i - 1; $j >= 0; $j--) { // 取出下一个元素，在已经排序的元素序列中从后向前扫描
+            if ($array[$j] > $new) {       // 如果该元素（已排序）大于新元素，将该元素移到下一位置
+                $array[$j + 1] = $array[$j];
+            } else {                       // 直到找到已排序的元素小于或者等于新元素的位置
+                break;
+            }
+        }
+        $array[$j + 1] = $new;             // 将新元素插入到该位置后
+    }
+    return $array;
+}
+
 // 测试
 $array = [11, 2, 311, 14, 15, 64, 72, 82, 91, 105];
 print_r(bubble_sort($array));
 print_r(quick_sort($array));
 print_r(select_sort($array));
+print_r(insert_sort($array));
