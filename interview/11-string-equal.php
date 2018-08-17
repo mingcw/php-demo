@@ -17,11 +17,10 @@ function is_equal($str1, $str2)
         $count = 0;
         for ($j = 0; $j < $len; $j++) {
             if ($char == substr($str2, $j, 1)) {
-                $count++;
+                if (++$count > 1) {
+                    return false;
+                }
             }
-        }
-        if ($count > 1) {
-            return false;
         }
     }
 
